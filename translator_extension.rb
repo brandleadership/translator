@@ -13,7 +13,10 @@ class TranslatorExtension < Radiant::Extension
   cattr_accessor :defaults
   
   define_routes do |map|
-    map.connect 'language/set/:language', :controller => 'language', :action => 'set_lang'
+    map.connect 'language/set/:language',
+                :controller => 'language',
+                :action => 'set_lang'
+
     map.connect ':language/*url',
                 :controller => 'site',
                 :action => 'show_page',
