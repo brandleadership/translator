@@ -84,7 +84,7 @@ class TranslateResponseCache
     # cache in a separate directory (i.e. en/), but for now, we're just adding the extension
     private
       def translator_path(path)
-        path =~ /\.css|\.js$/ ? path : kk_request.suffixize(kk_request.language)
+        path =~ /\.css|\.sass|\.js$/ ? path : path + kk_request.suffixize(kk_request.language)
       end
 
       def page_cache_path(path)
